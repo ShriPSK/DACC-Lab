@@ -1,4 +1,3 @@
-models:	sklearn.tree
 plotting:	matplotlib.pyplot
 pearson correlation: from scipy.stats import pearsonr
 chi square test:	from scipy.stats import chi2_contingency
