@@ -1,0 +1,6 @@
+models:	sklearn.tree
+plotting:	matplotlib.pyplot
+pearson correlation: from scipy.stats import pearsonr
+chi square test:	from scipy.stats import chi2_contingency
+T test	:	from scipy.stats import ttest_ind
+			statistics,p=ttest_ind(2 columns)
