@@ -1,0 +1,26 @@
+data = {'Name':['Jai', 'Princi', 'Gaurav', 'Anuj'],
+        'Age':[27, 24, 22, 32],
+        'Address':['Delhi', 'Kanpur', 'Allahabad', 'Kannauj'],
+        'Qualification':['Msc', 'MA', 'MCA', 'Phd']}
+
+
+pd.read_csv() = read a csv file
+df.loc() = locate a value using label
+df.iloc() = locates values using index
+sf.T = interchange rows and columns
+df.rename(columns={'old'='new'})	=	rename column name
+df.isnull().sum()
+df.fillna(n)	=	fills missing vaues with x
+df.dropna()	=	drops rows with null values
+
+Iteration:
+
+	for i, j in df.iterrows():
+	    print(i, j)
+
+df.where(condition)	=	returns data satisfying condition
+df.sum()	=	returns sum of values of each column
+df.add(n)	=	adds each element with n
+df.sub(n)	=	subtracts each element with n
+df.mul(n), df.div(n)
+df.value_vounts()	=	returns no.of times each value appears

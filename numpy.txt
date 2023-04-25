@@ -1,0 +1,24 @@
+numpy:
+	ndim = dimension
+	slicing = arr[start:end:step]
+	dtype = datatype (i: integer, S:string,b:boolean,f:float)
+	arr.astype() = convert from one datatype to another
+	arr.copy = copies elements from one array to other
+	arr.view = used to view the content of original array
+	arr.base = checks if the array actually owns the value
+	arr.shape = returns array dimension
+	arr.reshape(-1) =	converts multidimensional array into 1D array 
+	np.nditer(arr) = iterates each value from multidimensional array
+	np.concatenate((arr1, arr2)) = arr1+arr2
+	np.array_split(arr, n) = splits arr into n arrays
+	np.where(condition) = returns indices of elements matching the condition
+	np.sort(arr) = sorts array ( with multidimensional array, it sorts innermost array)
+	arr.append() = adds an element to the array
+	random.randint(n,size=(x)) = creates x numbers between 0 and n
+	np.median(arr) = returns median of array
+	np.avg(arr) = returns average of array
+	
+	
+	
+	
+	
