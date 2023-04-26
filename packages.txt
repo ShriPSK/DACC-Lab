@@ -3,3 +3,14 @@ pearson correlation: from scipy.stats import pearsonr
 chi square test:	from scipy.stats import chi2_contingency
 T test	:	from scipy.stats import ttest_ind
 			statistics,p=ttest_ind(2 columns)
+
+split train test set: 	from sklearn.model_selection import train_test_split
+accuracy score: 		from sklearn.metrics import accuracy_score
+mean absolute error: 	from sklearn.metrics import mean_absolute_error
+confusion matrix: 	from sklearn.metrics import confusion_matrix
+classification report: 	from sklearn.metrics import classification_report
+Naive Bayes: 		from sklearn.naive_bayes import GaussianNB
+				from sklearn.naive_bayes import MultinomialNB
+SVM:				from sklearn.svm import SVC
+Logistic regression:	from sklearn.linear_model import LogisticRegression
+Multiple regression:	from sklearn.linear_model import LinearRegression
