@@ -1,0 +1,52 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class WordCount {
+
+    private static final int THREAD_COUNT = 4; // Number of threads to use
+    
+    public static void main(String[] args) throws InterruptedException {
+        String filename = "test.txt"; // File to read
+        int wordCount = 0; // Total word count
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
+            while ((line = br.readLine()) != null) {
+                Runnable worker = new WordCounter(line);
+                executor.execute(worker);
+            }
+            executor.shutdown();
+            while (!executor.isTerminated()) {
+                Thread.sleep(10);
+            }
+            wordCount = WordCounter.getWordCount();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Total words in file: " + wordCount);
+    }
+    
+    private static class WordCounter implements Runnable {
+        private String line;
+        private static int wordCount = 0;
+        
+        public WordCounter(String line) {
+            this.line = line;
+        }
+        
+        public static int getWordCount() {
+            return wordCount;
+        }
+
+        @Override
+        public void run() {
+            String[] words = line.split("\\s+");
+            wordCount += words.length;
+        }
+    }
+}
